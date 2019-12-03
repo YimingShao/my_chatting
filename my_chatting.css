@@ -1,0 +1,367 @@
+/*Animatio from the site https: //codepen.io/P1N2O/pen/pyBNzX*/
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background: linear-gradient(-45deg, #ee7752, #E5796D, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    position: absolute;
+
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/*Friends-list*/
+#mini-window {
+    width: 100%;
+    height: 100%;
+    display: none;
+    border: 1px solid #666;
+    position: relative;
+    margin: 2px auto 0;
+    background-color: none;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.mini-title {
+
+    margin-top: 20%;
+    font-size: 2.5vw;
+    float: left;
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    color: black;
+}
+
+#new_name {
+    margin-left: 15%;
+    width: 70%;
+    height: 8%;
+    margin-top: 30%;
+    font-size: 2vw;
+    font-family: "Courier New", Courier, monospace;
+}
+
+#new_id {
+    margin-left: 15%;
+    width: 70%;
+    height: 8%;
+    margin-top: 20%;
+    font-size: 2vw;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.add_button {
+    margin-top: 15%;
+    margin-left: 35%;
+    width: 30%;
+    height: 10%;
+
+    cursor: pointer;
+    outline: none;
+    border: none;
+    color: white;
+    background-color: dodgerblue;
+    font-size: 2vw;
+    border-radius: 20px;
+
+}
+
+
+
+.close {
+    margin-left: 5%;
+    font-size: 2.5vw;
+    margin-top: 5%;
+    float: left;
+    color: deepskyblue;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.add_friend {
+    margin-right: 8%;
+    margin-top: 7%;
+    font-size: 4vw;
+    float: right;
+    text-align: center;
+    color: deepskyblue;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-family: "Courier New", Courier, monospace;
+    position: relative;
+}
+
+
+#friend-list {
+    display: block;
+    margin-top: 5%;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    list-style-type: none;
+    overflow: auto;
+    border-top: solid 0.5px gray;
+    align-content: center;
+
+}
+
+.friend {
+    width: 90%;
+    height: 15%;
+    border-bottom: 1px solid #DDD;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin-left: 7%;
+    border-bottom: solid 0.5px gray;
+    font-size: 1.5vw;
+    color: black;
+}
+
+
+.friend:not(.selected):hover {
+    background: #DDD;
+}
+
+
+
+/*Chatting*/
+
+.container {
+    height: 75%;
+    width: 80%;
+    /*    overflow-x: hidden;*/
+    margin: auto;
+    margin-top: 5%;
+    opacity: 50%;
+    background-color: aliceblue;
+    border-radius: 20px;
+}
+
+
+
+.friends_list {
+    width: 33%;
+    height: 90%;
+    position: relative;
+    float: left;
+    margin-left: 8%;
+    margin-top: 2%;
+
+    background-color: white;
+    border-radius: 20px;
+    border: none;
+}
+
+.chatting_space {
+    width: 45%;
+    height: 90%;
+    position: relative;
+    float: right;
+    margin-right: 8%;
+    margin-top: 2%;
+    background-color: white;
+    border-radius: 20px;
+
+}
+
+.Title {
+    text-indent: 15%;
+    margin-top: 8%;
+    font-size: 3vw;
+    float: left;
+    margin-bottom: 8%;
+    font-family: "Courier New", Courier, monospace;
+    color: black;
+
+
+}
+
+.friends {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #666;
+    margin: 2px auto 0;
+    position: relative;
+    border-radius: 20px;
+    border: 2px solid #666;
+    display: none;
+}
+
+.talk_con {
+    width: 100%;
+    height: 100%;
+    border: solid #666;
+    margin: 2px auto 0;
+    border-radius: 20px;
+
+}
+
+#chatting_title {
+    margin-top: 1.5%;
+    font-size: 2.7vw;
+    float: left;
+    margin-left: 8%;
+    font-family: "Courier New", Courier, monospace;
+    position: absolute;
+    color: black;
+    cursor: pointer;
+}
+
+#delete_button {
+    width: 25%;
+    margin-right: 5%;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+    position: relative;
+    font-size: 1.5vw;
+    float: right;
+    text-align: center;
+    color: white;
+    background-color: orangered;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-family: "Courier New", Courier, monospace;
+    border-radius: 20px;
+    height: 6%;
+}
+
+.talk_show {
+    width: 90%;
+    height: 78%;
+    border: 2px solid #666;
+    margin-left: 5%;
+    margin-top: 10%;
+    overflow: auto;
+    border-radius: 20px;
+}
+
+.talk_input {
+    width: 100%;
+    margin: 10px auto 0;
+    position: relative;
+    float: left;
+}
+
+#textfield {
+    width: 75%;
+    height: 6%;
+    padding: 3px 5px;
+    float: left;
+    margin-left: 5%;
+    margin-top: 1%;
+    /*    outline: none;*/
+    text-indent: 2%;
+    border-radius: 15px;
+    display: inline-block;
+    border: 1px solid gray;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.Send {
+    height: 6%;
+    width: 12%;
+    float: right;
+    padding: 3px 5px;
+    margin-right: 5%;
+    margin-top: 1%;
+    font-size: 1vw;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    background-color: dodgerblue;
+    color: white;
+    border-radius: 15px;
+    position: relative;
+}
+
+.second_view {
+    margin: 2%;
+}
+
+.second_view span {
+    display: inline-block;
+    background-color: gainsboro;
+    border-radius: 13px;
+    color: black;
+    padding: 2% 2%;
+    font-size: 1.5vw;
+}
+
+.first_view {
+    margin: 2%;
+    text-align: right;
+}
+
+.first_view span {
+    display: inline-block;
+    background-color: dodgerblue;
+    border-radius: 13px;
+    color: white;
+    padding: 2% 2%;
+    font-size: 1.5vw;
+}
+
+.time_slot {
+    height: 5%;
+    position: relative;
+    color: gray;
+    text-align: center;
+    font-size: 1.5vw;
+    margin-top: 10%;
+}
+
+#info {
+    width: 100%;
+    height: 100%;
+    display: none;
+    border: 1px solid #666;
+    position: relative;
+    margin: 2px auto 0;
+    background-color: none;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: white;
+    z-index: 20;
+    color: red;
+}
+
+.info_data {
+    color: black;
+    font-size: 2.5vw;
+    position: relative;
+    margin-left: 15%;
+    width: 70%;
+    margin-top: 30%;
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
+
+}
